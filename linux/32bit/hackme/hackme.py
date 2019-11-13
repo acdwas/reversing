@@ -17,8 +17,6 @@ for i in range(10):
     v5 = byte_804869C[v3]
     v9 = v3 + 1
     v7 = 0
-    # print(v7, v9)
-    # while True:
     while True:
         v7 += 1
         if v7 > v9:
