@@ -5,7 +5,6 @@ import binascii
 
 p = angr.Project("./rev200", load_options={"auto_load_libs": False})
 
-
 input = claripy.BVS("input", 8*9)
 
 state = p.factory.blank_state(addr=0x0400626, add_options={angr.options.LAZY_SOLVES})
@@ -18,7 +17,7 @@ for i in range(9):
     state.add_constraints(input.get_byte(i) >= 0x20)
     state.add_constraints(input.get_byte(i) <= 0x7f)
 
-state.add_constraints(state.memory.load(0x10000, 5) == int(binascii.hexlify(b"#%Ye7"), 16))
+#state.add_constraints(state.memory.load(0x10000, 5) == int(binascii.hexlify(b"#%Ye7"), 16))
 
 sm = p.factory.simulation_manager(state)
 
