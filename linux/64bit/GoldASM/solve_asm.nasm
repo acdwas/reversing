@@ -1,7 +1,5 @@
 [bits 64]
 
-section .data
-    msg:    times 24 dd       0x00
 section .text
     global _start
 _start:
